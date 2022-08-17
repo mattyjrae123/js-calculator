@@ -17,3 +17,13 @@ function add(n1, n2) {
 function subtract(n1, n2) {
   return n1 - n2;
 }
+
+/**
+ * Returns the product of n1 and n2
+ * @param {number} n1 
+ * @param {number} n2 
+ * @returns product of n1 and n2
+ */
+function multiply(n1, n2) {
+  return n1 * n2;
+}
