@@ -18,3 +18,17 @@ Calculator application written with HTML, CSS and Javascript.
 - Floating point numbers
 - Backspace/Clear button
 - Keyboard support
+
+### Rough Plan
+
+1. Write functions for operations
+  - Addition
+  - Subtraction
+  - Multiplication
+  - Division
+2. Create interface with minimal design
+  - 0-9 digit buttons
+  - Operation buttons (+ - * / . = C)
+  - Display panel
+3. Wire up interface to logic and build out full functionality
+4. Apply style and design to interface
