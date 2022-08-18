@@ -2,15 +2,28 @@ let currInput = null;
 let prevInput = null;
 let currOperator = null;
 
-// testing display panel
 const displayPanel = document.querySelector('#display-panel');
-displayPanel.textContent = 'Hello';
 
-// testing number buttons
+/******************
+* EVENT LISTENERS *
+*******************/
+
+/*
+  Add digit to currInput and update display panel with currInput
+ */
 document.querySelectorAll('.operand')
         .forEach(button => {
           button.addEventListener('click', () => {
-            console.log(button.value);
+            const num = parseInt(button.value);
+
+            if (typeof currInput !== 'number') {
+              currInput = num;
+            } else {
+              currInput *= 10;
+              currInput += num;
+            }
+
+            displayPanel.textContent = currInput;
           });
         });
 
@@ -55,6 +68,10 @@ when equals button is clicked
     clear currentOperator
     display firstInput
  */
+
+/************
+* FUNCTIONS *
+*************/
 
 /**
  * Returns the sum of n1 and n2
