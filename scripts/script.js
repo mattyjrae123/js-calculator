@@ -62,3 +62,46 @@ function operate(n1, n2, operator) {
     return divide(n1, n2);
   }
 }
+
+/*
+
+Create variables for:
+  currentInput
+  firstInput
+  currentOperator
+
+when a number (operand) button is clicked
+ add number to currentInput
+ display currentInput
+
+when operator button is clicked
+  if firstInput and currentInput are null
+    do nothing?
+   else if firstInput is null
+    set firstInput to currentInput
+    set currentOperator to chosen operator
+    clear currentInput (undefined?)
+    dont change display?
+  
+  else
+    store result of operate(firstInput, currentInput, currentOperator) in firstInput
+    set currentOperator to chosen operator
+    clear currentInput (undefined?)
+    display firstInput?
+
+when clear button is clicked
+  clear currentInput
+  clear firstInput
+  clear currentOperator
+  reset display to 0?
+
+when equals button is clicked
+  if firstInput or currentInput are undefined
+    do nothing?
+  
+  else
+    store result of operate(firstInput, currentInput, currentOperator) in firstInput
+    clear currentInput
+    clear currentOperator
+    display firstInput
+ */
