@@ -36,7 +36,6 @@ document.querySelector('input[value="AC"]')
           prevInput = null;
           currOperator = null;
 
-          //displayPanel.textContent = '';
           updateDisplay();
         });
 
@@ -73,8 +72,8 @@ document.querySelector('.equals')
             return;
           }
 
-          currInput = operate(prevInput, currInput, currOperator);
-          prevInput = null;
+          prevInput = operate(prevInput, currInput, currOperator);
+          currInput = null;
           currOperator = null;
 
           updateDisplay();
