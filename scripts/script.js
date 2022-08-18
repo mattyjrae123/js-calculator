@@ -28,6 +28,18 @@ document.querySelectorAll('.operand')
         });
 
 /*
+* Clear variables and reset display
+*/
+document.querySelector('input[value="AC"]')
+        .addEventListener('click', () => {
+          currInput = null;
+          prevInput = null;
+          currOperator = null;
+
+          displayPanel.textContent = '';
+        });
+
+/*
 Create variables for:
   currentInput
   firstInput
