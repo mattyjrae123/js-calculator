@@ -13,8 +13,8 @@
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 16.667% 16.667% 16.667% 16.667% 16.667% 16.667%;
-  width: 600px;
-  height: 750px;
+  width: 350px;
+  height: 525px;
   margin: auto;
 }
 
