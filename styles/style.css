@@ -20,6 +20,11 @@
 #display-panel {
   grid-column-start: 1;
   grid-column-end: 5;
+
+  /*display text at bottom right of panel*/
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 input[value="0"] {
