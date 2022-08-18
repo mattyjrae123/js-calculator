@@ -1,3 +1,23 @@
-h1 {
-  color: green;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+}
+
+#display-panel {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+input[value="0"] {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
