@@ -11,7 +11,8 @@
 
 #main-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 16.667% 16.667% 16.667% 16.667% 16.667% 16.667%;
   width: 600px;
   height: 750px;
   margin: auto;
