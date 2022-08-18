@@ -39,6 +39,13 @@ document.querySelector('input[value="AC"]')
           displayPanel.textContent = '';
         });
 
+document.querySelectorAll('.operator')
+        .forEach(button => {
+          button.addEventListener('click', () => {
+            console.log(button);
+          });
+        });
+
 /*
 Create variables for:
   currentInput
