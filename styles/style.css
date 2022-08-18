@@ -71,7 +71,7 @@ input:active {
   background-color: rgb(60, 60, 60);
 }
 
-.operator {
+.operator, .equals {
   color: white;
   background-color: rgb(10, 135, 0);
 }

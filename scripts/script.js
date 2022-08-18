@@ -16,14 +16,14 @@ document.querySelectorAll('.operand')
           button.addEventListener('click', () => {
             const num = parseInt(button.value);
 
-            if (typeof currInput !== 'number') {
+            if (currInput === null) {
               currInput = num;
             } else {
               currInput *= 10;
               currInput += num;
             }
 
-            displayPanel.textContent = currInput;
+            updateDisplay();
           });
         });
 
@@ -36,57 +36,67 @@ document.querySelector('input[value="AC"]')
           prevInput = null;
           currOperator = null;
 
-          displayPanel.textContent = '';
+          //displayPanel.textContent = '';
+          updateDisplay();
         });
 
 document.querySelectorAll('.operator')
         .forEach(button => {
           button.addEventListener('click', () => {
-            console.log(button);
+            if (currInput === null && prevInput === null) {
+              return;
+            }
+
+            if (prevInput === null && currInput !== null) {
+              prevInput = currInput;
+              currInput = null;
+              currOperator = button.value;
+            }
+
+            if (prevInput !== null && currInput === null) {
+              currOperator = button.value;
+            }
+
+            if (prevInput !== null && currInput !== null) {
+              prevInput = operate(prevInput, currInput, currOperator);
+              currInput = null;
+              currOperator = button.value;
+            }
+
+            updateDisplay();
           });
         });
 
-/*
-Create variables for:
-  currentInput
-  firstInput
-  currentOperator
+document.querySelector('.equals')
+        .addEventListener('click', () => {
+          if (prevInput === null || currInput === null || currOperator === null) {
+            return;
+          }
 
-when a number (operand) button is clicked
- add number to currentInput
- display currentInput
+          currInput = operate(prevInput, currInput, currOperator);
+          prevInput = null;
+          currOperator = null;
 
-when operator button is clicked
-  if firstInput and currentInput are null
-    do nothing?
-   else if firstInput is null
-    set firstInput to currentInput
-    set currentOperator to chosen operator
-    clear currentInput (undefined?)
-    dont change display?
-  
-  else
-    store result of operate(firstInput, currentInput, currentOperator) in firstInput
-    set currentOperator to chosen operator
-    clear currentInput (undefined?)
-    display firstInput?
+          updateDisplay();
+        });
 
-when clear button is clicked
-  clear currentInput
-  clear firstInput
-  clear currentOperator
-  reset display to 0?
+function updateDisplay() {
+  let resultString = '';
+  if (prevInput !== null) {
+    resultString += prevInput;
+  }
+  if (currOperator !== null) {
+    resultString += ' ' + currOperator + ' ';
+  }
 
-when equals button is clicked
-  if firstInput or currentInput are undefined
-    do nothing?
-  
-  else
-    store result of operate(firstInput, currentInput, currentOperator) in firstInput
-    clear currentInput
-    clear currentOperator
-    display firstInput
- */
+  if (currInput !== null) {
+    resultString += currInput;
+  }
+
+  resultString.trim();
+
+  displayPanel.textContent = resultString;
+}
 
 /************
 * FUNCTIONS *
