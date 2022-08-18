@@ -32,3 +32,6 @@ Calculator application written with HTML, CSS and Javascript.
   - Display panel
 3. Wire up interface to logic and build out full functionality
 4. Apply style and design to interface
+
+#### Rough design
+![Design of calculator interface](rough-design.png)
