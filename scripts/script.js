@@ -45,9 +45,17 @@ document.querySelector('input[value="AC"]')
           updateDisplay();
         });
 
+/*
+* [+ - * /] operation functions
+*/
 document.querySelectorAll('.operator')
         .forEach(button => {
           button.addEventListener('click', () => {
+            if (result !== null) {
+              prevInput = result;
+              result = null;
+            }
+
             if (currInput === null && prevInput === null) {
               return;
             }
@@ -55,19 +63,14 @@ document.querySelectorAll('.operator')
             if (prevInput === null) {
               prevInput = currInput;
               currInput = null;
-              currOperator = button.value;
-            }
-
-            if (currInput === null) {
-              currOperator = button.value;
             }
 
             if (prevInput !== null && currInput !== null) {
               prevInput = operate(prevInput, currInput, currOperator);
               currInput = null;
-              currOperator = button.value;
             }
 
+            currOperator = button.value;
             updateDisplay();
           });
         });
