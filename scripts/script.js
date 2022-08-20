@@ -1,5 +1,6 @@
 let currInput = null;
 let prevInput = null;
+let result = null;
 let currOperator = null;
 
 const displayPanel = document.querySelector('#display-panel');
@@ -16,6 +17,10 @@ document.querySelectorAll('.operand')
           button.addEventListener('click', () => {
             const num = parseInt(button.value);
 
+            if (result !== null) {
+              result = null;
+            }
+            
             if (currInput === null) {
               currInput = num;
             } else {
@@ -34,6 +39,7 @@ document.querySelector('input[value="AC"]')
         .addEventListener('click', () => {
           currInput = null;
           prevInput = null;
+          result = null;
           currOperator = null;
 
           updateDisplay();
@@ -46,13 +52,13 @@ document.querySelectorAll('.operator')
               return;
             }
 
-            if (prevInput === null && currInput !== null) {
+            if (prevInput === null) {
               prevInput = currInput;
               currInput = null;
               currOperator = button.value;
             }
 
-            if (prevInput !== null && currInput === null) {
+            if (currInput === null) {
               currOperator = button.value;
             }
 
@@ -72,7 +78,8 @@ document.querySelector('.equals')
             return;
           }
 
-          prevInput = operate(prevInput, currInput, currOperator);
+          result = operate(prevInput, currInput, currOperator);
+          prevInput = null;
           currInput = null;
           currOperator = null;
 
@@ -81,6 +88,10 @@ document.querySelector('.equals')
 
 function updateDisplay() {
   let resultString = '';
+
+  if (result !== null) {
+    resultString += result;
+  }
   if (prevInput !== null) {
     resultString += prevInput;
   }
