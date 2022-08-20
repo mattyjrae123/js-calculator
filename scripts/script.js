@@ -45,6 +45,27 @@ document.querySelector('input[value="AC"]')
           updateDisplay();
         });
 
+document.querySelector('input[value="+/-"]')
+        .addEventListener('click', () => {
+          if (currInput === null && result === null) {
+            return;
+          }
+
+          if (currInput > 0) {
+            currInput = -Math.abs(currInput);
+          } else if (currInput < 0) {
+            currInput = Math.abs(currInput);
+          }
+
+          if (result > 0) {
+            result = -Math.abs(result);
+          } else if (result < 0) {
+            result = Math.abs(result);
+          }
+
+          updateDisplay();
+        });
+
 /*
 * [+ - * /] operation functions
 */
