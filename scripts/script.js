@@ -1,7 +1,7 @@
-let currInput = null;
-let prevInput = null;
-let result = null;
-let currOperator = null;
+let currInput = null;        // operand on right of equation
+let prevInput = null;        // operand on left of equation
+let result = null;           // result of equation (when equals button clicked)
+let currOperator = null;     // oeprator in middle of equation (+ - * /)
 
 const displayPanel = document.querySelector('#display-panel');
 
