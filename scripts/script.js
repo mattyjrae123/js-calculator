@@ -45,6 +45,23 @@ document.querySelector('input[value="AC"]')
           updateDisplay();
         });
 
+document.querySelector('input[value="%"]')
+        .addEventListener('click', () => {
+          if (currInput === null && result === null) {
+            return;
+          }
+
+          if (currInput !== null) {
+            currInput /= 100;
+          }
+
+          if (result !== null) {
+            result /= 100;
+          }
+
+          updateDisplay();
+        });
+
 document.querySelector('input[value="+/-"]')
         .addEventListener('click', () => {
           if (currInput === null && result === null) {
