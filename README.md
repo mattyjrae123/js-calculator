@@ -1,5 +1,7 @@
 # js-calculator
 
+[Link to live page](https://mattyjrae123.github.io/js-calculator/)
+
 Calculator application written with HTML, CSS and Javascript.
 
 ## Features
