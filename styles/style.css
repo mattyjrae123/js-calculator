@@ -27,8 +27,8 @@ h1 {
 
 #main-container {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 16.667% 16.667% 16.667% 16.667% 16.667% 16.667%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   width: 350px;
   height: 525px;
   margin: 0 auto auto auto;
